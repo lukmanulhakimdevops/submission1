@@ -42,16 +42,16 @@
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['name'];
-			$address = $_POST['address'];
+	    $address = $_POST['address'];
             $email = $_POST['email'];
             $job = $_POST['job'];
             $date = date("d-m-Y");
             // Insert data
-            $sql_insert = "INSERT INTO dbazure (name, email, job, date) 
+            $sql_insert = "INSERT INTO dbazure (name, address,email, job, date) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
-			$stmt->bindValue(1, $address);
+	    $stmt->bindValue(1, $address);
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
             $stmt->bindValue(4, $date);
@@ -76,7 +76,7 @@
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['name']."</td>";
-					echo "<td>".$registrant['address']."</td>";
+		    echo "<td>".$registrant['address']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
