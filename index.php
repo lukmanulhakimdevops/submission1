@@ -47,7 +47,7 @@
 	    $address = $_POST['address'];
             $email = $_POST['email'];
             $job = $_POST['job'];
-            $date = date("dd-mm-YYYY");
+            $date = date("DDMMYYYY");
             // Insert data
             $sql_insert = "INSERT INTO dicodingdb (firstname,lastname, address,email, job, date) 
             VALUES (?,?,?,?,?,?)";
