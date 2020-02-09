@@ -27,10 +27,10 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "lukmanulhakimdicodingbookcatalougesubmission.database.windows.net";
+    $host = "lukmanulhakimdb.database.windows.net";
     $user = "lukmanulhakim";
-    $pass = "$Abcd12345";
-    $db = "lukmanulhakimdicodingbookcatalougesubmission";
+    $pass = "$Abcd$12345";
+    $db = "dicodingdb";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
@@ -47,7 +47,7 @@
             $job = $_POST['job'];
             $date = date("d-m-Y");
             // Insert data
-            $sql_insert = "INSERT INTO lukmanulhakimdicodingbookcatalougesubmission (name, address,email, job, date) 
+            $sql_insert = "INSERT INTO dicodingdb (name, address,email, job, date) 
             VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
@@ -63,7 +63,7 @@
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
-            $sql_select = "SELECT * FROM lukmanulhakimdicodingbookcatalougesubmission";
+            $sql_select = "SELECT * FROM dicodingdb";
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
