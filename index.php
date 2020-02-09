@@ -30,7 +30,7 @@
     $host = "dicodingbookcatalougesubmission.database.windows.net";
     $user = "lukmanulhakim";
     $pass = "$Abcd$12345";
-    $db = "dbazure";
+    $db = "lukmanulhakimdicodingbookcatalougesubmission";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
