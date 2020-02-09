@@ -29,7 +29,7 @@
  <?php
     $host = "lukmanulhakimdb.database.windows.net";
     $user = "lukmanulhakim";
-    $pass = "#Abcd$12345";
+    $pass = "#Abcd12345";
     $db = "dicodingdb";
 
     try {
