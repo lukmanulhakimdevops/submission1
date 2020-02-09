@@ -19,8 +19,8 @@
  <h1>Register here!</h1>
  <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
  <form method="post" action="index.php" enctype="multipart/form-data" >
-       First Name  <input type="text" name="name" id="firstname"/></br></br>
-       Last Name <input type="text" name="name" id="lastname"/></br></br>
+       First Name  <input type="text" name="firstname" id="firstname"/></br></br>
+       Last Name <input type="text" name="lastname" id="lastname"/></br></br>
        Address  <input type="text" name="address" id="address"/></br></br>
        Email <input type="text" name="email" id="email"/></br></br>
        Job <input type="text" name="job" id="job"/></br></br>
@@ -72,8 +72,8 @@
             if(count($registrants) > 0) {
                 echo "<h2>People who are registered:</h2>";
                 echo "<table>";
-                echo "<tr><th>Firstname</th>";
-		echo "<th>Lastname</th>";
+                echo "<tr><th>First Name</th>";
+		echo "<th>Last Name</th>";
 		echo "<th>Address</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
