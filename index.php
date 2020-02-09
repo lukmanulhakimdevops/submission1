@@ -49,7 +49,7 @@
             $job = $_POST['job'];
             $date = date("d-m-Y");
             // Insert data
-            $sql_insert = "INSERT INTO dicodingdb (name, address,email, job, date) 
+            $sql_insert = "INSERT INTO dicodingdb (firstname,lastname, address,email, job, date) 
             VALUES (?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $firstname);
