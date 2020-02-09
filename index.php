@@ -27,7 +27,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "dicodingbookcatalougesubmission.database.windows.net";
+    $host = "lukmanulhakimdicodingbookcatalougesubmission.database.windows.net";
     $user = "lukmanulhakim";
     $pass = "$Abcd$12345";
     $db = "lukmanulhakim";
