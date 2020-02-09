@@ -1,2 +1,2 @@
-# submission1
-dicoding book catalogue submission
+# a83-macd-labs
+Source code untuk kelas Azure
