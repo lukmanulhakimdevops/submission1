@@ -1,2 +1,2 @@
-# a83-macd-labs
+# azure-labs
 Source code untuk kelas Azure
