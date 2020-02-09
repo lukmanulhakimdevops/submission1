@@ -29,7 +29,7 @@
  <?php
     $host = "lukmanulhakimdicodingbookcatalougesubmission.database.windows.net";
     $user = "lukmanulhakim";
-    $pass = "$Abcd$12345";
+    $pass = "Abcd$12345";
     $db = "lukmanulhakim";
 
     try {
