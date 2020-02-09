@@ -41,20 +41,22 @@
 
     if (isset($_POST['submit'])) {
         try {
-            $name = $_POST['name'];
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
 	    $address = $_POST['address'];
             $email = $_POST['email'];
             $job = $_POST['job'];
             $date = date("d-m-Y");
             // Insert data
             $sql_insert = "INSERT INTO dicodingdb (name, address,email, job, date) 
-            VALUES (?,?,?,?,?)";
+            VALUES (?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
-            $stmt->bindValue(1, $name);
-	    $stmt->bindValue(1, $address);
-            $stmt->bindValue(2, $email);
-            $stmt->bindValue(3, $job);
-            $stmt->bindValue(4, $date);
+            $stmt->bindValue(1, $firstname);
+	    $stmt->bindValue(2, $lastname);
+	    $stmt->bindValue(3, $address);
+            $stmt->bindValue(4, $email);
+            $stmt->bindValue(5, $job);
+            $stmt->bindValue(6, $date);
             $stmt->execute();
         } catch(Exception $e) {
             echo "Failed: " . $e;
@@ -69,13 +71,15 @@
             if(count($registrants) > 0) {
                 echo "<h2>People who are registered:</h2>";
                 echo "<table>";
-                echo "<tr><th>Name</th>";
+                echo "<tr><th>Firstname</th>";
+		echo "<th>Lastname</th>";
 		echo "<th>Address</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
-                    echo "<tr><td>".$registrant['name']."</td>";
+                    echo "<tr><td>".$registrant['firstname']."</td>";
+		    echo "<td>".$registrant['lastname']."</td>";
 		    echo "<td>".$registrant['address']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
