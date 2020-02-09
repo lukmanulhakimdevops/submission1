@@ -47,8 +47,8 @@
             $job = $_POST['job'];
             $date = date("d-m-Y");
             // Insert data
-            $sql_insert = "INSERT INTO dbazure (name, address,email, job, date) 
-                        VALUES (?,?,?,?)";
+            $sql_insert = "INSERT INTO lukmanulhakim (name, address,email, job, date) 
+            VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
 	    $stmt->bindValue(1, $address);
@@ -63,7 +63,7 @@
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
-            $sql_select = "SELECT * FROM dbazure";
+            $sql_select = "SELECT * FROM lukmanulhakim";
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
